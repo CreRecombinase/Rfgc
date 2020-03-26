@@ -22,6 +22,9 @@
 
 #ifndef RcppBlaze__RcppBlazeWrap__h
 #define RcppBlaze__RcppBlazeWrap__h
+#if FGC_DBG_PRINT
+#include <iostream>
+#endif
 
 // most code are modified from the definition of matrix in blaze
 namespace Rcpp {
@@ -40,6 +43,9 @@ namespace Rcpp {
       typedef typename MT::CompositeType  CT;
       typedef typename blaze::If_t< blaze::IsExpression<RN>::value, const RT, CT >  Tmp;
       Tmp A( ~dm );  // Evaluation of the dense matrix operand
+#if FGC_DBG_PRINT
+      std::cout << A << '\n';
+#endif
 
       const int RTYPE = ::Rcpp::traits::r_sexptype_traits< ET >::rtype;
       ::Rcpp::Matrix<RTYPE> out( A.rows(), A.columns() );
