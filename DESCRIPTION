@@ -1,0 +1,26 @@
+Package: Rfgc
+Type: Package
+Title: 'Rcpp' Integration for the fgc coreset and clustering library
+Version: 3.7
+Date: 2020-02-24
+Author: Daniel Baker
+Maintainer: Ching-Chuan Chen <dnb@cs.jhu.edu>
+URL: https://github.com/dnbaker/Rfgc,
+    https://bitbucket.org/blaze-lib/blaze
+BugReports: https://github.com/dnbaker/Rfgc/issues
+Description: Fast generic coresets and clustering.
+Depends:
+    R (>= 3.0.2)
+Imports:
+    utils,
+    Rcpp (>= 0.11.0),
+    Matrix (>= 1.1-0)
+LinkingTo: Rcpp,
+    BH (>= 1.54.0-2)
+Suggests:
+    RUnit,
+    pkgKitten
+LazyData: yes
+SystemRequirements: C++17
+License: GPL (>= 2)
+RoxygenNote: 6.0.1

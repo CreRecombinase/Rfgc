@@ -1,0 +1,4 @@
+[submodule "src/fgc"]
+	path = src/fgc
+	url = https://github.com/dnbaker/fgc
+	branch = llr
