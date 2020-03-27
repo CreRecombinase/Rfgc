@@ -11,21 +11,21 @@
 using namespace Rcpp;
 
 // dist_matrixdd
-Rcpp::NumericMatrix dist_matrixdd(blaze::DynamicMatrix<double>& X, int measure);
-static SEXP _Rfgc_dist_matrixdd_try(SEXP XSEXP, SEXP measureSEXP) {
+Rcpp::NumericMatrix dist_matrixdd(blaze::DynamicMatrix<double>& X, int arg);
+static SEXP _Rfgc_dist_matrixdd_try(SEXP XSEXP, SEXP argSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
-    Rcpp::traits::input_parameter< int >::type measure(measureSEXP);
-    rcpp_result_gen = Rcpp::wrap(dist_matrixdd(X, measure));
+    Rcpp::traits::input_parameter< int >::type arg(argSEXP);
+    rcpp_result_gen = Rcpp::wrap(dist_matrixdd(X, arg));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_dist_matrixdd(SEXP XSEXP, SEXP measureSEXP) {
+RcppExport SEXP _Rfgc_dist_matrixdd(SEXP XSEXP, SEXP argSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixdd_try(XSEXP, measureSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixdd_try(XSEXP, argSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
