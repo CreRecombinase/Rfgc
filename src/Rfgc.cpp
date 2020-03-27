@@ -12,7 +12,27 @@
     return Rcpp::wrap(ret)
 
 // [[Rcpp::export]]
+void display_constants() {
+    fgc::jsd::detail::print_measures();
+}
+
+// [[Rcpp::export]]
 Rcpp::NumericMatrix dist_matrixdd(blaze::DynamicMatrix<double> &X, int arg) {
+    fgc::jsd::ProbDivType measure = (fgc::jsd::ProbDivType) arg;
+    RET_FOR_MEASURE(measure);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix dist_matrixdf(blaze::DynamicMatrix<float> &X, int arg) {
+    fgc::jsd::ProbDivType measure = (fgc::jsd::ProbDivType) arg;
+    RET_FOR_MEASURE(measure);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix dist_matrixsd(blaze::CompressedMatrix<double> &X, int arg) {
+    fgc::jsd::ProbDivType measure = (fgc::jsd::ProbDivType) arg;
+    RET_FOR_MEASURE(measure);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix dist_matrixsf(blaze::CompressedMatrix<float> &X, int arg) {
     fgc::jsd::ProbDivType measure = (fgc::jsd::ProbDivType) arg;
     RET_FOR_MEASURE(measure);
 }
@@ -176,4 +196,36 @@ Rcpp::NumericMatrix poisson_matrixsd( blaze::CompressedMatrix<double> &X) {
 // [[Rcpp::export]]
 Rcpp::NumericMatrix poisson_matrixsf( blaze::CompressedMatrix<float> &X) {
     RET_FOR_MEASURE(fgc::jsd::POISSON);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix bhattacharyya_metric_matrixdd( blaze::DynamicMatrix<double> &X) {
+    RET_FOR_MEASURE(fgc::jsd::BHATTACHARYYA_METRIC);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix bhattacharyya_metric_matrixdf( blaze::DynamicMatrix<float> &X) {
+    RET_FOR_MEASURE(fgc::jsd::BHATTACHARYYA_METRIC);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix bhattacharyya_metric_matrixsd( blaze::CompressedMatrix<double> &X) {
+    RET_FOR_MEASURE(fgc::jsd::BHATTACHARYYA_METRIC);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix bhattacharyya_metric_matrixsf( blaze::CompressedMatrix<float> &X) {
+    RET_FOR_MEASURE(fgc::jsd::BHATTACHARYYA_METRIC);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix bhattacharyya_distance_matrixdd( blaze::DynamicMatrix<double> &X) {
+    RET_FOR_MEASURE(fgc::jsd::BHATTACHARYYA_DISTANCE);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix bhattacharyya_distance_matrixdf( blaze::DynamicMatrix<float> &X) {
+    RET_FOR_MEASURE(fgc::jsd::BHATTACHARYYA_DISTANCE);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix bhattacharyya_distance_matrixsd( blaze::CompressedMatrix<double> &X) {
+    RET_FOR_MEASURE(fgc::jsd::BHATTACHARYYA_DISTANCE);
+}
+// [[Rcpp::export]]
+Rcpp::NumericMatrix bhattacharyya_distance_matrixsf( blaze::CompressedMatrix<float> &X) {
+    RET_FOR_MEASURE(fgc::jsd::BHATTACHARYYA_DISTANCE);
 }

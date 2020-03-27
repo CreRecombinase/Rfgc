@@ -10,6 +10,38 @@
 
 using namespace Rcpp;
 
+// display_constants
+void display_constants();
+static SEXP _Rfgc_display_constants_try() {
+BEGIN_RCPP
+    display_constants();
+    return R_NilValue;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_display_constants() {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_display_constants_try());
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
 // dist_matrixdd
 Rcpp::NumericMatrix dist_matrixdd(blaze::DynamicMatrix<double>& X, int arg);
 static SEXP _Rfgc_dist_matrixdd_try(SEXP XSEXP, SEXP argSEXP) {
@@ -26,6 +58,111 @@ RcppExport SEXP _Rfgc_dist_matrixdd(SEXP XSEXP, SEXP argSEXP) {
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
         rcpp_result_gen = PROTECT(_Rfgc_dist_matrixdd_try(XSEXP, argSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// dist_matrixdf
+Rcpp::NumericMatrix dist_matrixdf(blaze::DynamicMatrix<float>& X, int arg);
+static SEXP _Rfgc_dist_matrixdf_try(SEXP XSEXP, SEXP argSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type arg(argSEXP);
+    rcpp_result_gen = Rcpp::wrap(dist_matrixdf(X, arg));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_dist_matrixdf(SEXP XSEXP, SEXP argSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixdf_try(XSEXP, argSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// dist_matrixsd
+Rcpp::NumericMatrix dist_matrixsd(blaze::CompressedMatrix<double>& X, int arg);
+static SEXP _Rfgc_dist_matrixsd_try(SEXP XSEXP, SEXP argSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type arg(argSEXP);
+    rcpp_result_gen = Rcpp::wrap(dist_matrixsd(X, arg));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_dist_matrixsd(SEXP XSEXP, SEXP argSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixsd_try(XSEXP, argSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// dist_matrixsf
+Rcpp::NumericMatrix dist_matrixsf(blaze::CompressedMatrix<float>& X, int arg);
+static SEXP _Rfgc_dist_matrixsf_try(SEXP XSEXP, SEXP argSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type arg(argSEXP);
+    rcpp_result_gen = Rcpp::wrap(dist_matrixsf(X, arg));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_dist_matrixsf(SEXP XSEXP, SEXP argSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixsf_try(XSEXP, argSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1405,12 +1542,288 @@ RcppExport SEXP _Rfgc_poisson_matrixsf(SEXP XSEXP) {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// bhattacharyya_metric_matrixdd
+Rcpp::NumericMatrix bhattacharyya_metric_matrixdd(blaze::DynamicMatrix<double>& X);
+static SEXP _Rfgc_bhattacharyya_metric_matrixdd_try(SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixdd(X));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixdd(SEXP XSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixdd_try(XSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// bhattacharyya_metric_matrixdf
+Rcpp::NumericMatrix bhattacharyya_metric_matrixdf(blaze::DynamicMatrix<float>& X);
+static SEXP _Rfgc_bhattacharyya_metric_matrixdf_try(SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixdf(X));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixdf(SEXP XSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixdf_try(XSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// bhattacharyya_metric_matrixsd
+Rcpp::NumericMatrix bhattacharyya_metric_matrixsd(blaze::CompressedMatrix<double>& X);
+static SEXP _Rfgc_bhattacharyya_metric_matrixsd_try(SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixsd(X));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixsd(SEXP XSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixsd_try(XSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// bhattacharyya_metric_matrixsf
+Rcpp::NumericMatrix bhattacharyya_metric_matrixsf(blaze::CompressedMatrix<float>& X);
+static SEXP _Rfgc_bhattacharyya_metric_matrixsf_try(SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixsf(X));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixsf(SEXP XSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixsf_try(XSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// bhattacharyya_distance_matrixdd
+Rcpp::NumericMatrix bhattacharyya_distance_matrixdd(blaze::DynamicMatrix<double>& X);
+static SEXP _Rfgc_bhattacharyya_distance_matrixdd_try(SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixdd(X));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixdd(SEXP XSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixdd_try(XSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// bhattacharyya_distance_matrixdf
+Rcpp::NumericMatrix bhattacharyya_distance_matrixdf(blaze::DynamicMatrix<float>& X);
+static SEXP _Rfgc_bhattacharyya_distance_matrixdf_try(SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixdf(X));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixdf(SEXP XSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixdf_try(XSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// bhattacharyya_distance_matrixsd
+Rcpp::NumericMatrix bhattacharyya_distance_matrixsd(blaze::CompressedMatrix<double>& X);
+static SEXP _Rfgc_bhattacharyya_distance_matrixsd_try(SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixsd(X));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixsd(SEXP XSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixsd_try(XSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// bhattacharyya_distance_matrixsf
+Rcpp::NumericMatrix bhattacharyya_distance_matrixsf(blaze::CompressedMatrix<float>& X);
+static SEXP _Rfgc_bhattacharyya_distance_matrixsf_try(SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixsf(X));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixsf(SEXP XSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixsf_try(XSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
 
 // validate (ensure exported C++ functions exist before calling them)
 static int _Rfgc_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
+        signatures.insert("void(*display_constants)()");
         signatures.insert("Rcpp::NumericMatrix(*dist_matrixdd)(blaze::DynamicMatrix<double>&,int)");
+        signatures.insert("Rcpp::NumericMatrix(*dist_matrixdf)(blaze::DynamicMatrix<float>&,int)");
+        signatures.insert("Rcpp::NumericMatrix(*dist_matrixsd)(blaze::CompressedMatrix<double>&,int)");
+        signatures.insert("Rcpp::NumericMatrix(*dist_matrixsf)(blaze::CompressedMatrix<float>&,int)");
         signatures.insert("Rcpp::NumericMatrix(*llr_matrixdd)(blaze::DynamicMatrix<double>&)");
         signatures.insert("Rcpp::NumericMatrix(*llr_matrixdf)(blaze::DynamicMatrix<float>&)");
         signatures.insert("Rcpp::NumericMatrix(*llr_matrixsd)(blaze::CompressedMatrix<double>&)");
@@ -1451,13 +1864,25 @@ static int _Rfgc_RcppExport_validate(const char* sig) {
         signatures.insert("Rcpp::NumericMatrix(*poisson_matrixdf)(blaze::DynamicMatrix<float>&)");
         signatures.insert("Rcpp::NumericMatrix(*poisson_matrixsd)(blaze::CompressedMatrix<double>&)");
         signatures.insert("Rcpp::NumericMatrix(*poisson_matrixsf)(blaze::CompressedMatrix<float>&)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixdd)(blaze::DynamicMatrix<double>&)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixdf)(blaze::DynamicMatrix<float>&)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixsd)(blaze::CompressedMatrix<double>&)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixsf)(blaze::CompressedMatrix<float>&)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixdd)(blaze::DynamicMatrix<double>&)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixdf)(blaze::DynamicMatrix<float>&)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixsd)(blaze::CompressedMatrix<double>&)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixsf)(blaze::CompressedMatrix<float>&)");
     }
     return signatures.find(sig) != signatures.end();
 }
 
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP _Rfgc_RcppExport_registerCCallable() { 
+    R_RegisterCCallable("Rfgc", "_Rfgc_display_constants", (DL_FUNC)_Rfgc_display_constants_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_dist_matrixdd", (DL_FUNC)_Rfgc_dist_matrixdd_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_dist_matrixdf", (DL_FUNC)_Rfgc_dist_matrixdf_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_dist_matrixsd", (DL_FUNC)_Rfgc_dist_matrixsd_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_dist_matrixsf", (DL_FUNC)_Rfgc_dist_matrixsf_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_llr_matrixdd", (DL_FUNC)_Rfgc_llr_matrixdd_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_llr_matrixdf", (DL_FUNC)_Rfgc_llr_matrixdf_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_llr_matrixsd", (DL_FUNC)_Rfgc_llr_matrixsd_try);
@@ -1498,12 +1923,24 @@ RcppExport SEXP _Rfgc_RcppExport_registerCCallable() {
     R_RegisterCCallable("Rfgc", "_Rfgc_poisson_matrixdf", (DL_FUNC)_Rfgc_poisson_matrixdf_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_poisson_matrixsd", (DL_FUNC)_Rfgc_poisson_matrixsd_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_poisson_matrixsf", (DL_FUNC)_Rfgc_poisson_matrixsf_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_bhattacharyya_metric_matrixdd", (DL_FUNC)_Rfgc_bhattacharyya_metric_matrixdd_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_bhattacharyya_metric_matrixdf", (DL_FUNC)_Rfgc_bhattacharyya_metric_matrixdf_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_bhattacharyya_metric_matrixsd", (DL_FUNC)_Rfgc_bhattacharyya_metric_matrixsd_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_bhattacharyya_metric_matrixsf", (DL_FUNC)_Rfgc_bhattacharyya_metric_matrixsf_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_bhattacharyya_distance_matrixdd", (DL_FUNC)_Rfgc_bhattacharyya_distance_matrixdd_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_bhattacharyya_distance_matrixdf", (DL_FUNC)_Rfgc_bhattacharyya_distance_matrixdf_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_bhattacharyya_distance_matrixsd", (DL_FUNC)_Rfgc_bhattacharyya_distance_matrixsd_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_bhattacharyya_distance_matrixsf", (DL_FUNC)_Rfgc_bhattacharyya_distance_matrixsf_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_RcppExport_validate", (DL_FUNC)_Rfgc_RcppExport_validate);
     return R_NilValue;
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_Rfgc_display_constants", (DL_FUNC) &_Rfgc_display_constants, 0},
     {"_Rfgc_dist_matrixdd", (DL_FUNC) &_Rfgc_dist_matrixdd, 2},
+    {"_Rfgc_dist_matrixdf", (DL_FUNC) &_Rfgc_dist_matrixdf, 2},
+    {"_Rfgc_dist_matrixsd", (DL_FUNC) &_Rfgc_dist_matrixsd, 2},
+    {"_Rfgc_dist_matrixsf", (DL_FUNC) &_Rfgc_dist_matrixsf, 2},
     {"_Rfgc_llr_matrixdd", (DL_FUNC) &_Rfgc_llr_matrixdd, 1},
     {"_Rfgc_llr_matrixdf", (DL_FUNC) &_Rfgc_llr_matrixdf, 1},
     {"_Rfgc_llr_matrixsd", (DL_FUNC) &_Rfgc_llr_matrixsd, 1},
@@ -1544,6 +1981,14 @@ static const R_CallMethodDef CallEntries[] = {
     {"_Rfgc_poisson_matrixdf", (DL_FUNC) &_Rfgc_poisson_matrixdf, 1},
     {"_Rfgc_poisson_matrixsd", (DL_FUNC) &_Rfgc_poisson_matrixsd, 1},
     {"_Rfgc_poisson_matrixsf", (DL_FUNC) &_Rfgc_poisson_matrixsf, 1},
+    {"_Rfgc_bhattacharyya_metric_matrixdd", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixdd, 1},
+    {"_Rfgc_bhattacharyya_metric_matrixdf", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixdf, 1},
+    {"_Rfgc_bhattacharyya_metric_matrixsd", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixsd, 1},
+    {"_Rfgc_bhattacharyya_metric_matrixsf", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixsf, 1},
+    {"_Rfgc_bhattacharyya_distance_matrixdd", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixdd, 1},
+    {"_Rfgc_bhattacharyya_distance_matrixdf", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixdf, 1},
+    {"_Rfgc_bhattacharyya_distance_matrixsd", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixsd, 1},
+    {"_Rfgc_bhattacharyya_distance_matrixsf", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixsf, 1},
     {"_Rfgc_RcppExport_registerCCallable", (DL_FUNC) &_Rfgc_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };
