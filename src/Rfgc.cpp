@@ -5,6 +5,7 @@
 #include <Rcpp.h>
 #include <fgc/fgc.h>
 #include <RcppBlaze3.h>
+using namespace fgc;
 
 #define RET_FOR_MEASURE(measure) \
     auto app = fgc::jsd::make_probdiv_applicator(X, measure); \

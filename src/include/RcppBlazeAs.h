@@ -230,7 +230,7 @@ namespace Rcpp {
               result(i ,j) = ::Rcpp::internal::caster< typename Rcpp::traits::storage_type<RTYPE>::type, Type >( mat(i ,j) );
           }
         }
-        std::cout << "Converted matrix " << result << '\n';
+        //std::cout << "Converted matrix " << result << '\n';
         return result ;
       }
     };
