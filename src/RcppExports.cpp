@@ -42,6 +42,342 @@ RcppExport SEXP _Rfgc_display_constants() {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// display_samplers
+void display_samplers();
+static SEXP _Rfgc_display_samplers_try() {
+BEGIN_RCPP
+    display_samplers();
+    return R_NilValue;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_display_samplers() {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_display_samplers_try());
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// construct_coresetdd
+Rcpp::List construct_coresetdd(blaze::DynamicMatrix<double>& X, int k, size_t cs_size, int measure, int sampler, uint64_t seed);
+static SEXP _Rfgc_construct_coresetdd_try(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP measureSEXP, SEXP samplerSEXP, SEXP seedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< size_t >::type cs_size(cs_sizeSEXP);
+    Rcpp::traits::input_parameter< int >::type measure(measureSEXP);
+    Rcpp::traits::input_parameter< int >::type sampler(samplerSEXP);
+    Rcpp::traits::input_parameter< uint64_t >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(construct_coresetdd(X, k, cs_size, measure, sampler, seed));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_construct_coresetdd(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP measureSEXP, SEXP samplerSEXP, SEXP seedSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_construct_coresetdd_try(XSEXP, kSEXP, cs_sizeSEXP, measureSEXP, samplerSEXP, seedSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// construct_coresetdf
+Rcpp::List construct_coresetdf(blaze::DynamicMatrix<float>& X, int k, size_t cs_size, int measure, int sampler, uint64_t seed);
+static SEXP _Rfgc_construct_coresetdf_try(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP measureSEXP, SEXP samplerSEXP, SEXP seedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< size_t >::type cs_size(cs_sizeSEXP);
+    Rcpp::traits::input_parameter< int >::type measure(measureSEXP);
+    Rcpp::traits::input_parameter< int >::type sampler(samplerSEXP);
+    Rcpp::traits::input_parameter< uint64_t >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(construct_coresetdf(X, k, cs_size, measure, sampler, seed));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_construct_coresetdf(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP measureSEXP, SEXP samplerSEXP, SEXP seedSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_construct_coresetdf_try(XSEXP, kSEXP, cs_sizeSEXP, measureSEXP, samplerSEXP, seedSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// construct_coresetsd
+Rcpp::List construct_coresetsd(blaze::CompressedMatrix<double>& X, int k, size_t cs_size, int measure, int sampler, uint64_t seed);
+static SEXP _Rfgc_construct_coresetsd_try(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP measureSEXP, SEXP samplerSEXP, SEXP seedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< size_t >::type cs_size(cs_sizeSEXP);
+    Rcpp::traits::input_parameter< int >::type measure(measureSEXP);
+    Rcpp::traits::input_parameter< int >::type sampler(samplerSEXP);
+    Rcpp::traits::input_parameter< uint64_t >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(construct_coresetsd(X, k, cs_size, measure, sampler, seed));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_construct_coresetsd(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP measureSEXP, SEXP samplerSEXP, SEXP seedSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_construct_coresetsd_try(XSEXP, kSEXP, cs_sizeSEXP, measureSEXP, samplerSEXP, seedSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// construct_coresetsf
+Rcpp::List construct_coresetsf(blaze::CompressedMatrix<float>& X, int k, size_t cs_size, int measure, int sampler, uint64_t seed);
+static SEXP _Rfgc_construct_coresetsf_try(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP measureSEXP, SEXP samplerSEXP, SEXP seedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< size_t >::type cs_size(cs_sizeSEXP);
+    Rcpp::traits::input_parameter< int >::type measure(measureSEXP);
+    Rcpp::traits::input_parameter< int >::type sampler(samplerSEXP);
+    Rcpp::traits::input_parameter< uint64_t >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(construct_coresetsf(X, k, cs_size, measure, sampler, seed));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_construct_coresetsf(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP measureSEXP, SEXP samplerSEXP, SEXP seedSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_construct_coresetsf_try(XSEXP, kSEXP, cs_sizeSEXP, measureSEXP, samplerSEXP, seedSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// kmeans_coresetdd
+Rcpp::List kmeans_coresetdd(const blaze::DynamicMatrix<double>& X, int k, size_t cs_size, uint64_t seed);
+static SEXP _Rfgc_kmeans_coresetdd_try(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP seedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const blaze::DynamicMatrix<double>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< size_t >::type cs_size(cs_sizeSEXP);
+    Rcpp::traits::input_parameter< uint64_t >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(kmeans_coresetdd(X, k, cs_size, seed));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_kmeans_coresetdd(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP seedSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_kmeans_coresetdd_try(XSEXP, kSEXP, cs_sizeSEXP, seedSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// kmeans_coresetdf
+Rcpp::List kmeans_coresetdf(const blaze::DynamicMatrix<float>& X, int k, size_t cs_size, uint64_t seed);
+static SEXP _Rfgc_kmeans_coresetdf_try(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP seedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const blaze::DynamicMatrix<float>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< size_t >::type cs_size(cs_sizeSEXP);
+    Rcpp::traits::input_parameter< uint64_t >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(kmeans_coresetdf(X, k, cs_size, seed));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_kmeans_coresetdf(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP seedSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_kmeans_coresetdf_try(XSEXP, kSEXP, cs_sizeSEXP, seedSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// kmeans_coresetsd
+Rcpp::List kmeans_coresetsd(const blaze::CompressedMatrix<double>& X, int k, size_t cs_size, uint64_t seed);
+static SEXP _Rfgc_kmeans_coresetsd_try(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP seedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const blaze::CompressedMatrix<double>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< size_t >::type cs_size(cs_sizeSEXP);
+    Rcpp::traits::input_parameter< uint64_t >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(kmeans_coresetsd(X, k, cs_size, seed));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_kmeans_coresetsd(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP seedSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_kmeans_coresetsd_try(XSEXP, kSEXP, cs_sizeSEXP, seedSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// kmeans_coresetsf
+Rcpp::List kmeans_coresetsf(const blaze::CompressedMatrix<float>& X, int k, size_t cs_size, uint64_t seed);
+static SEXP _Rfgc_kmeans_coresetsf_try(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP seedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const blaze::CompressedMatrix<float>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< int >::type k(kSEXP);
+    Rcpp::traits::input_parameter< size_t >::type cs_size(cs_sizeSEXP);
+    Rcpp::traits::input_parameter< uint64_t >::type seed(seedSEXP);
+    rcpp_result_gen = Rcpp::wrap(kmeans_coresetsf(X, k, cs_size, seed));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_kmeans_coresetsf(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP, SEXP seedSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_kmeans_coresetsf_try(XSEXP, kSEXP, cs_sizeSEXP, seedSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
 // dist_matrixdd
 Rcpp::NumericMatrix dist_matrixdd(blaze::DynamicMatrix<double>& X, int arg);
 static SEXP _Rfgc_dist_matrixdd_try(SEXP XSEXP, SEXP argSEXP) {
@@ -1820,6 +2156,15 @@ static int _Rfgc_RcppExport_validate(const char* sig) {
     static std::set<std::string> signatures;
     if (signatures.empty()) {
         signatures.insert("void(*display_constants)()");
+        signatures.insert("void(*display_samplers)()");
+        signatures.insert("Rcpp::List(*construct_coresetdd)(blaze::DynamicMatrix<double>&,int,size_t,int,int,uint64_t)");
+        signatures.insert("Rcpp::List(*construct_coresetdf)(blaze::DynamicMatrix<float>&,int,size_t,int,int,uint64_t)");
+        signatures.insert("Rcpp::List(*construct_coresetsd)(blaze::CompressedMatrix<double>&,int,size_t,int,int,uint64_t)");
+        signatures.insert("Rcpp::List(*construct_coresetsf)(blaze::CompressedMatrix<float>&,int,size_t,int,int,uint64_t)");
+        signatures.insert("Rcpp::List(*kmeans_coresetdd)(const blaze::DynamicMatrix<double>&,int,size_t,uint64_t)");
+        signatures.insert("Rcpp::List(*kmeans_coresetdf)(const blaze::DynamicMatrix<float>&,int,size_t,uint64_t)");
+        signatures.insert("Rcpp::List(*kmeans_coresetsd)(const blaze::CompressedMatrix<double>&,int,size_t,uint64_t)");
+        signatures.insert("Rcpp::List(*kmeans_coresetsf)(const blaze::CompressedMatrix<float>&,int,size_t,uint64_t)");
         signatures.insert("Rcpp::NumericMatrix(*dist_matrixdd)(blaze::DynamicMatrix<double>&,int)");
         signatures.insert("Rcpp::NumericMatrix(*dist_matrixdf)(blaze::DynamicMatrix<float>&,int)");
         signatures.insert("Rcpp::NumericMatrix(*dist_matrixsd)(blaze::CompressedMatrix<double>&,int)");
@@ -1879,6 +2224,15 @@ static int _Rfgc_RcppExport_validate(const char* sig) {
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP _Rfgc_RcppExport_registerCCallable() { 
     R_RegisterCCallable("Rfgc", "_Rfgc_display_constants", (DL_FUNC)_Rfgc_display_constants_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_display_samplers", (DL_FUNC)_Rfgc_display_samplers_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_construct_coresetdd", (DL_FUNC)_Rfgc_construct_coresetdd_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_construct_coresetdf", (DL_FUNC)_Rfgc_construct_coresetdf_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_construct_coresetsd", (DL_FUNC)_Rfgc_construct_coresetsd_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_construct_coresetsf", (DL_FUNC)_Rfgc_construct_coresetsf_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_kmeans_coresetdd", (DL_FUNC)_Rfgc_kmeans_coresetdd_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_kmeans_coresetdf", (DL_FUNC)_Rfgc_kmeans_coresetdf_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_kmeans_coresetsd", (DL_FUNC)_Rfgc_kmeans_coresetsd_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_kmeans_coresetsf", (DL_FUNC)_Rfgc_kmeans_coresetsf_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_dist_matrixdd", (DL_FUNC)_Rfgc_dist_matrixdd_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_dist_matrixdf", (DL_FUNC)_Rfgc_dist_matrixdf_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_dist_matrixsd", (DL_FUNC)_Rfgc_dist_matrixsd_try);
@@ -1937,6 +2291,15 @@ RcppExport SEXP _Rfgc_RcppExport_registerCCallable() {
 
 static const R_CallMethodDef CallEntries[] = {
     {"_Rfgc_display_constants", (DL_FUNC) &_Rfgc_display_constants, 0},
+    {"_Rfgc_display_samplers", (DL_FUNC) &_Rfgc_display_samplers, 0},
+    {"_Rfgc_construct_coresetdd", (DL_FUNC) &_Rfgc_construct_coresetdd, 6},
+    {"_Rfgc_construct_coresetdf", (DL_FUNC) &_Rfgc_construct_coresetdf, 6},
+    {"_Rfgc_construct_coresetsd", (DL_FUNC) &_Rfgc_construct_coresetsd, 6},
+    {"_Rfgc_construct_coresetsf", (DL_FUNC) &_Rfgc_construct_coresetsf, 6},
+    {"_Rfgc_kmeans_coresetdd", (DL_FUNC) &_Rfgc_kmeans_coresetdd, 4},
+    {"_Rfgc_kmeans_coresetdf", (DL_FUNC) &_Rfgc_kmeans_coresetdf, 4},
+    {"_Rfgc_kmeans_coresetsd", (DL_FUNC) &_Rfgc_kmeans_coresetsd, 4},
+    {"_Rfgc_kmeans_coresetsf", (DL_FUNC) &_Rfgc_kmeans_coresetsf, 4},
     {"_Rfgc_dist_matrixdd", (DL_FUNC) &_Rfgc_dist_matrixdd, 2},
     {"_Rfgc_dist_matrixdf", (DL_FUNC) &_Rfgc_dist_matrixdf, 2},
     {"_Rfgc_dist_matrixsd", (DL_FUNC) &_Rfgc_dist_matrixsd, 2},
