@@ -42,6 +42,38 @@ RcppExport SEXP _Rfgc_display_constants() {
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// display_sse_info
+void display_sse_info();
+static SEXP _Rfgc_display_sse_info_try() {
+BEGIN_RCPP
+    display_sse_info();
+    return R_NilValue;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _Rfgc_display_sse_info() {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_Rfgc_display_sse_info_try());
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
 // display_samplers
 void display_samplers();
 static SEXP _Rfgc_display_samplers_try() {
@@ -2156,6 +2188,7 @@ static int _Rfgc_RcppExport_validate(const char* sig) {
     static std::set<std::string> signatures;
     if (signatures.empty()) {
         signatures.insert("void(*display_constants)()");
+        signatures.insert("void(*display_sse_info)()");
         signatures.insert("void(*display_samplers)()");
         signatures.insert("Rcpp::List(*construct_coresetdd)(blaze::DynamicMatrix<double>&,int,size_t,int,int,uint64_t)");
         signatures.insert("Rcpp::List(*construct_coresetdf)(blaze::DynamicMatrix<float>&,int,size_t,int,int,uint64_t)");
@@ -2224,6 +2257,7 @@ static int _Rfgc_RcppExport_validate(const char* sig) {
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP _Rfgc_RcppExport_registerCCallable() { 
     R_RegisterCCallable("Rfgc", "_Rfgc_display_constants", (DL_FUNC)_Rfgc_display_constants_try);
+    R_RegisterCCallable("Rfgc", "_Rfgc_display_sse_info", (DL_FUNC)_Rfgc_display_sse_info_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_display_samplers", (DL_FUNC)_Rfgc_display_samplers_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_construct_coresetdd", (DL_FUNC)_Rfgc_construct_coresetdd_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_construct_coresetdf", (DL_FUNC)_Rfgc_construct_coresetdf_try);
@@ -2291,6 +2325,7 @@ RcppExport SEXP _Rfgc_RcppExport_registerCCallable() {
 
 static const R_CallMethodDef CallEntries[] = {
     {"_Rfgc_display_constants", (DL_FUNC) &_Rfgc_display_constants, 0},
+    {"_Rfgc_display_sse_info", (DL_FUNC) &_Rfgc_display_sse_info, 0},
     {"_Rfgc_display_samplers", (DL_FUNC) &_Rfgc_display_samplers, 0},
     {"_Rfgc_construct_coresetdd", (DL_FUNC) &_Rfgc_construct_coresetdd, 6},
     {"_Rfgc_construct_coresetdf", (DL_FUNC) &_Rfgc_construct_coresetdf, 6},
