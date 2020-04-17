@@ -7,6 +7,18 @@
 #include <RcppBlaze3.h>
 using namespace fgc;
 
+#ifdef __AVX512F__
+#pragma message("Using avx512")
+#elif __AVX2__
+#pragma message("Using avx2")
+#elif __AVX__
+#pragma message("Using avx")
+#elif __SSE4_1__
+#pragma message("sse4.1")
+#elif __SSE2__
+#pragma message("sse2")
+#endif
+
 #define RET_FOR_MEASURE(measure) \
     auto app = fgc::jsd::make_probdiv_applicator(X, measure); \
     auto ret = app.make_distance_matrix(measure, true); \
@@ -15,6 +27,28 @@ using namespace fgc;
 // [[Rcpp::export]]
 void display_constants() {
     fgc::jsd::detail::print_measures();
+}
+
+#ifndef __AVX512F__
+#define __AVX512F__ 0
+#endif
+#ifndef __AVX__
+#define __AVX__ 0
+#endif
+#ifndef __AVX2__
+#define __AVX2__ 0
+#endif
+#ifndef __SSE2__
+#define __SSE2__ 0
+#endif
+#ifndef __SSE4_1__
+#define __SSE4_1__ 0
+#endif
+
+// [[Rcpp::export]]
+void display_sse_info() {
+    std::fprintf(stderr, "AVX512: %d\nAVX2: %d\nAVX: %d\nSSE4.1: %d\nSSE2: %d. SIMD size: %zu\n",
+                 bool(__AVX512F__), bool(__AVX2__), bool(__AVX__), bool(__SSE4_1__), bool(__SSE2__), blaze::SIMDTrait<float>::size * sizeof(float));
 }
 // [[Rcpp::export]]
 void display_samplers() {
