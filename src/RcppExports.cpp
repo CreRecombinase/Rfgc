@@ -2,7 +2,7 @@
 // Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #include "minocore/minocore.h"
-#include "include/RcppBlaze3.h"
+#include "RcppBlaze3.h"
 #include "../inst/include/Rfgc.h"
 #include <Rcpp.h>
 #include <string>
@@ -411,21 +411,22 @@ RcppExport SEXP _Rfgc_kmeans_coresetsf(SEXP XSEXP, SEXP kSEXP, SEXP cs_sizeSEXP,
     return rcpp_result_gen;
 }
 // dist_matrixdd
-Rcpp::NumericMatrix dist_matrixdd(blaze::DynamicMatrix<double>& X, int arg);
-static SEXP _Rfgc_dist_matrixdd_try(SEXP XSEXP, SEXP argSEXP) {
+Rcpp::NumericMatrix dist_matrixdd(blaze::DynamicMatrix<double>& X, int arg, double gamma_beta);
+static SEXP _Rfgc_dist_matrixdd_try(SEXP XSEXP, SEXP argSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
     Rcpp::traits::input_parameter< int >::type arg(argSEXP);
-    rcpp_result_gen = Rcpp::wrap(dist_matrixdd(X, arg));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(dist_matrixdd(X, arg, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_dist_matrixdd(SEXP XSEXP, SEXP argSEXP) {
+RcppExport SEXP _Rfgc_dist_matrixdd(SEXP XSEXP, SEXP argSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixdd_try(XSEXP, argSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixdd_try(XSEXP, argSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -446,21 +447,22 @@ RcppExport SEXP _Rfgc_dist_matrixdd(SEXP XSEXP, SEXP argSEXP) {
     return rcpp_result_gen;
 }
 // dist_matrixdf
-Rcpp::NumericMatrix dist_matrixdf(blaze::DynamicMatrix<float>& X, int arg);
-static SEXP _Rfgc_dist_matrixdf_try(SEXP XSEXP, SEXP argSEXP) {
+Rcpp::NumericMatrix dist_matrixdf(blaze::DynamicMatrix<float>& X, int arg, double gamma_beta);
+static SEXP _Rfgc_dist_matrixdf_try(SEXP XSEXP, SEXP argSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
     Rcpp::traits::input_parameter< int >::type arg(argSEXP);
-    rcpp_result_gen = Rcpp::wrap(dist_matrixdf(X, arg));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(dist_matrixdf(X, arg, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_dist_matrixdf(SEXP XSEXP, SEXP argSEXP) {
+RcppExport SEXP _Rfgc_dist_matrixdf(SEXP XSEXP, SEXP argSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixdf_try(XSEXP, argSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixdf_try(XSEXP, argSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -481,21 +483,22 @@ RcppExport SEXP _Rfgc_dist_matrixdf(SEXP XSEXP, SEXP argSEXP) {
     return rcpp_result_gen;
 }
 // dist_matrixsd
-Rcpp::NumericMatrix dist_matrixsd(blaze::CompressedMatrix<double>& X, int arg);
-static SEXP _Rfgc_dist_matrixsd_try(SEXP XSEXP, SEXP argSEXP) {
+Rcpp::NumericMatrix dist_matrixsd(blaze::CompressedMatrix<double>& X, int arg, double gamma_beta);
+static SEXP _Rfgc_dist_matrixsd_try(SEXP XSEXP, SEXP argSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
     Rcpp::traits::input_parameter< int >::type arg(argSEXP);
-    rcpp_result_gen = Rcpp::wrap(dist_matrixsd(X, arg));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(dist_matrixsd(X, arg, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_dist_matrixsd(SEXP XSEXP, SEXP argSEXP) {
+RcppExport SEXP _Rfgc_dist_matrixsd(SEXP XSEXP, SEXP argSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixsd_try(XSEXP, argSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixsd_try(XSEXP, argSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -516,21 +519,22 @@ RcppExport SEXP _Rfgc_dist_matrixsd(SEXP XSEXP, SEXP argSEXP) {
     return rcpp_result_gen;
 }
 // dist_matrixsf
-Rcpp::NumericMatrix dist_matrixsf(blaze::CompressedMatrix<float>& X, int arg);
-static SEXP _Rfgc_dist_matrixsf_try(SEXP XSEXP, SEXP argSEXP) {
+Rcpp::NumericMatrix dist_matrixsf(blaze::CompressedMatrix<float>& X, int arg, double gamma_beta);
+static SEXP _Rfgc_dist_matrixsf_try(SEXP XSEXP, SEXP argSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
     Rcpp::traits::input_parameter< int >::type arg(argSEXP);
-    rcpp_result_gen = Rcpp::wrap(dist_matrixsf(X, arg));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(dist_matrixsf(X, arg, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_dist_matrixsf(SEXP XSEXP, SEXP argSEXP) {
+RcppExport SEXP _Rfgc_dist_matrixsf(SEXP XSEXP, SEXP argSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixsf_try(XSEXP, argSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_dist_matrixsf_try(XSEXP, argSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -551,20 +555,21 @@ RcppExport SEXP _Rfgc_dist_matrixsf(SEXP XSEXP, SEXP argSEXP) {
     return rcpp_result_gen;
 }
 // llr_matrixdd
-Rcpp::NumericMatrix llr_matrixdd(blaze::DynamicMatrix<double>& X);
-static SEXP _Rfgc_llr_matrixdd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix llr_matrixdd(blaze::DynamicMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_llr_matrixdd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(llr_matrixdd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(llr_matrixdd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_llr_matrixdd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_llr_matrixdd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_llr_matrixdd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_llr_matrixdd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -585,20 +590,21 @@ RcppExport SEXP _Rfgc_llr_matrixdd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // llr_matrixdf
-Rcpp::NumericMatrix llr_matrixdf(blaze::DynamicMatrix<float>& X);
-static SEXP _Rfgc_llr_matrixdf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix llr_matrixdf(blaze::DynamicMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_llr_matrixdf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(llr_matrixdf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(llr_matrixdf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_llr_matrixdf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_llr_matrixdf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_llr_matrixdf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_llr_matrixdf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -619,20 +625,21 @@ RcppExport SEXP _Rfgc_llr_matrixdf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // llr_matrixsd
-Rcpp::NumericMatrix llr_matrixsd(blaze::CompressedMatrix<double>& X);
-static SEXP _Rfgc_llr_matrixsd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix llr_matrixsd(blaze::CompressedMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_llr_matrixsd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(llr_matrixsd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(llr_matrixsd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_llr_matrixsd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_llr_matrixsd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_llr_matrixsd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_llr_matrixsd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -653,20 +660,21 @@ RcppExport SEXP _Rfgc_llr_matrixsd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // llr_matrixsf
-Rcpp::NumericMatrix llr_matrixsf(blaze::CompressedMatrix<float>& X);
-static SEXP _Rfgc_llr_matrixsf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix llr_matrixsf(blaze::CompressedMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_llr_matrixsf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(llr_matrixsf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(llr_matrixsf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_llr_matrixsf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_llr_matrixsf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_llr_matrixsf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_llr_matrixsf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -687,20 +695,21 @@ RcppExport SEXP _Rfgc_llr_matrixsf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // uwllr_matrixdd
-Rcpp::NumericMatrix uwllr_matrixdd(blaze::DynamicMatrix<double>& X);
-static SEXP _Rfgc_uwllr_matrixdd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix uwllr_matrixdd(blaze::DynamicMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_uwllr_matrixdd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(uwllr_matrixdd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(uwllr_matrixdd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_uwllr_matrixdd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_uwllr_matrixdd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_uwllr_matrixdd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_uwllr_matrixdd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -721,20 +730,21 @@ RcppExport SEXP _Rfgc_uwllr_matrixdd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // uwllr_matrixdf
-Rcpp::NumericMatrix uwllr_matrixdf(blaze::DynamicMatrix<float>& X);
-static SEXP _Rfgc_uwllr_matrixdf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix uwllr_matrixdf(blaze::DynamicMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_uwllr_matrixdf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(uwllr_matrixdf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(uwllr_matrixdf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_uwllr_matrixdf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_uwllr_matrixdf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_uwllr_matrixdf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_uwllr_matrixdf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -755,20 +765,21 @@ RcppExport SEXP _Rfgc_uwllr_matrixdf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // uwllr_matrixsd
-Rcpp::NumericMatrix uwllr_matrixsd(blaze::CompressedMatrix<double>& X);
-static SEXP _Rfgc_uwllr_matrixsd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix uwllr_matrixsd(blaze::CompressedMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_uwllr_matrixsd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(uwllr_matrixsd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(uwllr_matrixsd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_uwllr_matrixsd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_uwllr_matrixsd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_uwllr_matrixsd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_uwllr_matrixsd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -789,20 +800,21 @@ RcppExport SEXP _Rfgc_uwllr_matrixsd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // uwllr_matrixsf
-Rcpp::NumericMatrix uwllr_matrixsf(blaze::CompressedMatrix<float>& X);
-static SEXP _Rfgc_uwllr_matrixsf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix uwllr_matrixsf(blaze::CompressedMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_uwllr_matrixsf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(uwllr_matrixsf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(uwllr_matrixsf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_uwllr_matrixsf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_uwllr_matrixsf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_uwllr_matrixsf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_uwllr_matrixsf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -823,20 +835,21 @@ RcppExport SEXP _Rfgc_uwllr_matrixsf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // jsd_matrixdd
-Rcpp::NumericMatrix jsd_matrixdd(blaze::DynamicMatrix<double>& X);
-static SEXP _Rfgc_jsd_matrixdd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix jsd_matrixdd(blaze::DynamicMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_jsd_matrixdd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(jsd_matrixdd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(jsd_matrixdd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_jsd_matrixdd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_jsd_matrixdd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_jsd_matrixdd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_jsd_matrixdd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -857,20 +870,21 @@ RcppExport SEXP _Rfgc_jsd_matrixdd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // jsd_matrixdf
-Rcpp::NumericMatrix jsd_matrixdf(blaze::DynamicMatrix<float>& X);
-static SEXP _Rfgc_jsd_matrixdf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix jsd_matrixdf(blaze::DynamicMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_jsd_matrixdf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(jsd_matrixdf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(jsd_matrixdf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_jsd_matrixdf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_jsd_matrixdf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_jsd_matrixdf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_jsd_matrixdf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -891,20 +905,21 @@ RcppExport SEXP _Rfgc_jsd_matrixdf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // jsd_matrixsd
-Rcpp::NumericMatrix jsd_matrixsd(blaze::CompressedMatrix<double>& X);
-static SEXP _Rfgc_jsd_matrixsd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix jsd_matrixsd(blaze::CompressedMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_jsd_matrixsd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(jsd_matrixsd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(jsd_matrixsd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_jsd_matrixsd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_jsd_matrixsd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_jsd_matrixsd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_jsd_matrixsd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -925,20 +940,21 @@ RcppExport SEXP _Rfgc_jsd_matrixsd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // jsd_matrixsf
-Rcpp::NumericMatrix jsd_matrixsf(blaze::CompressedMatrix<float>& X);
-static SEXP _Rfgc_jsd_matrixsf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix jsd_matrixsf(blaze::CompressedMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_jsd_matrixsf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(jsd_matrixsf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(jsd_matrixsf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_jsd_matrixsf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_jsd_matrixsf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_jsd_matrixsf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_jsd_matrixsf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -959,20 +975,21 @@ RcppExport SEXP _Rfgc_jsd_matrixsf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // jsm_matrixdd
-Rcpp::NumericMatrix jsm_matrixdd(blaze::DynamicMatrix<double>& X);
-static SEXP _Rfgc_jsm_matrixdd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix jsm_matrixdd(blaze::DynamicMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_jsm_matrixdd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(jsm_matrixdd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(jsm_matrixdd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_jsm_matrixdd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_jsm_matrixdd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_jsm_matrixdd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_jsm_matrixdd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -993,20 +1010,21 @@ RcppExport SEXP _Rfgc_jsm_matrixdd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // jsm_matrixdf
-Rcpp::NumericMatrix jsm_matrixdf(blaze::DynamicMatrix<float>& X);
-static SEXP _Rfgc_jsm_matrixdf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix jsm_matrixdf(blaze::DynamicMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_jsm_matrixdf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(jsm_matrixdf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(jsm_matrixdf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_jsm_matrixdf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_jsm_matrixdf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_jsm_matrixdf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_jsm_matrixdf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1027,20 +1045,21 @@ RcppExport SEXP _Rfgc_jsm_matrixdf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // jsm_matrixsd
-Rcpp::NumericMatrix jsm_matrixsd(blaze::CompressedMatrix<double>& X);
-static SEXP _Rfgc_jsm_matrixsd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix jsm_matrixsd(blaze::CompressedMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_jsm_matrixsd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(jsm_matrixsd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(jsm_matrixsd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_jsm_matrixsd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_jsm_matrixsd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_jsm_matrixsd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_jsm_matrixsd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1061,20 +1080,21 @@ RcppExport SEXP _Rfgc_jsm_matrixsd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // jsm_matrixsf
-Rcpp::NumericMatrix jsm_matrixsf(blaze::CompressedMatrix<float>& X);
-static SEXP _Rfgc_jsm_matrixsf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix jsm_matrixsf(blaze::CompressedMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_jsm_matrixsf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(jsm_matrixsf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(jsm_matrixsf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_jsm_matrixsf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_jsm_matrixsf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_jsm_matrixsf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_jsm_matrixsf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1503,20 +1523,21 @@ RcppExport SEXP _Rfgc_sqrl2_matrixsf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // mkl_matrixdd
-Rcpp::NumericMatrix mkl_matrixdd(blaze::DynamicMatrix<double>& X);
-static SEXP _Rfgc_mkl_matrixdd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix mkl_matrixdd(blaze::DynamicMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_mkl_matrixdd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(mkl_matrixdd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(mkl_matrixdd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_mkl_matrixdd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_mkl_matrixdd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_mkl_matrixdd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_mkl_matrixdd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1537,20 +1558,21 @@ RcppExport SEXP _Rfgc_mkl_matrixdd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // mkl_matrixdf
-Rcpp::NumericMatrix mkl_matrixdf(blaze::DynamicMatrix<float>& X);
-static SEXP _Rfgc_mkl_matrixdf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix mkl_matrixdf(blaze::DynamicMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_mkl_matrixdf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(mkl_matrixdf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(mkl_matrixdf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_mkl_matrixdf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_mkl_matrixdf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_mkl_matrixdf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_mkl_matrixdf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1571,20 +1593,21 @@ RcppExport SEXP _Rfgc_mkl_matrixdf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // mkl_matrixsd
-Rcpp::NumericMatrix mkl_matrixsd(blaze::CompressedMatrix<double>& X);
-static SEXP _Rfgc_mkl_matrixsd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix mkl_matrixsd(blaze::CompressedMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_mkl_matrixsd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(mkl_matrixsd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(mkl_matrixsd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_mkl_matrixsd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_mkl_matrixsd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_mkl_matrixsd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_mkl_matrixsd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1605,20 +1628,21 @@ RcppExport SEXP _Rfgc_mkl_matrixsd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // mkl_matrixsf
-Rcpp::NumericMatrix mkl_matrixsf(blaze::CompressedMatrix<float>& X);
-static SEXP _Rfgc_mkl_matrixsf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix mkl_matrixsf(blaze::CompressedMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_mkl_matrixsf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(mkl_matrixsf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(mkl_matrixsf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_mkl_matrixsf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_mkl_matrixsf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_mkl_matrixsf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_mkl_matrixsf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1639,20 +1663,21 @@ RcppExport SEXP _Rfgc_mkl_matrixsf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // tvd_matrixdd
-Rcpp::NumericMatrix tvd_matrixdd(blaze::DynamicMatrix<double>& X);
-static SEXP _Rfgc_tvd_matrixdd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix tvd_matrixdd(blaze::DynamicMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_tvd_matrixdd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(tvd_matrixdd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(tvd_matrixdd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_tvd_matrixdd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_tvd_matrixdd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_tvd_matrixdd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_tvd_matrixdd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1673,20 +1698,21 @@ RcppExport SEXP _Rfgc_tvd_matrixdd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // tvd_matrixdf
-Rcpp::NumericMatrix tvd_matrixdf(blaze::DynamicMatrix<float>& X);
-static SEXP _Rfgc_tvd_matrixdf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix tvd_matrixdf(blaze::DynamicMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_tvd_matrixdf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(tvd_matrixdf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(tvd_matrixdf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_tvd_matrixdf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_tvd_matrixdf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_tvd_matrixdf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_tvd_matrixdf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1707,20 +1733,21 @@ RcppExport SEXP _Rfgc_tvd_matrixdf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // tvd_matrixsd
-Rcpp::NumericMatrix tvd_matrixsd(blaze::CompressedMatrix<double>& X);
-static SEXP _Rfgc_tvd_matrixsd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix tvd_matrixsd(blaze::CompressedMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_tvd_matrixsd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(tvd_matrixsd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(tvd_matrixsd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_tvd_matrixsd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_tvd_matrixsd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_tvd_matrixsd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_tvd_matrixsd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1741,20 +1768,21 @@ RcppExport SEXP _Rfgc_tvd_matrixsd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // tvd_matrixsf
-Rcpp::NumericMatrix tvd_matrixsf(blaze::CompressedMatrix<float>& X);
-static SEXP _Rfgc_tvd_matrixsf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix tvd_matrixsf(blaze::CompressedMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_tvd_matrixsf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(tvd_matrixsf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(tvd_matrixsf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_tvd_matrixsf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_tvd_matrixsf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_tvd_matrixsf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_tvd_matrixsf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1775,20 +1803,21 @@ RcppExport SEXP _Rfgc_tvd_matrixsf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // bhattacharyya_metric_matrixdd
-Rcpp::NumericMatrix bhattacharyya_metric_matrixdd(blaze::DynamicMatrix<double>& X);
-static SEXP _Rfgc_bhattacharyya_metric_matrixdd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix bhattacharyya_metric_matrixdd(blaze::DynamicMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_bhattacharyya_metric_matrixdd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixdd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixdd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixdd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixdd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixdd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixdd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1809,20 +1838,21 @@ RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixdd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // bhattacharyya_metric_matrixdf
-Rcpp::NumericMatrix bhattacharyya_metric_matrixdf(blaze::DynamicMatrix<float>& X);
-static SEXP _Rfgc_bhattacharyya_metric_matrixdf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix bhattacharyya_metric_matrixdf(blaze::DynamicMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_bhattacharyya_metric_matrixdf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixdf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixdf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixdf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixdf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixdf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixdf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1843,20 +1873,21 @@ RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixdf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // bhattacharyya_metric_matrixsd
-Rcpp::NumericMatrix bhattacharyya_metric_matrixsd(blaze::CompressedMatrix<double>& X);
-static SEXP _Rfgc_bhattacharyya_metric_matrixsd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix bhattacharyya_metric_matrixsd(blaze::CompressedMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_bhattacharyya_metric_matrixsd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixsd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixsd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixsd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixsd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixsd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixsd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1877,20 +1908,21 @@ RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixsd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // bhattacharyya_metric_matrixsf
-Rcpp::NumericMatrix bhattacharyya_metric_matrixsf(blaze::CompressedMatrix<float>& X);
-static SEXP _Rfgc_bhattacharyya_metric_matrixsf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix bhattacharyya_metric_matrixsf(blaze::CompressedMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_bhattacharyya_metric_matrixsf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixsf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_metric_matrixsf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixsf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixsf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixsf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_metric_matrixsf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1911,20 +1943,21 @@ RcppExport SEXP _Rfgc_bhattacharyya_metric_matrixsf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // bhattacharyya_distance_matrixdd
-Rcpp::NumericMatrix bhattacharyya_distance_matrixdd(blaze::DynamicMatrix<double>& X);
-static SEXP _Rfgc_bhattacharyya_distance_matrixdd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix bhattacharyya_distance_matrixdd(blaze::DynamicMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_bhattacharyya_distance_matrixdd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixdd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixdd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixdd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixdd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixdd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixdd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1945,20 +1978,21 @@ RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixdd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // bhattacharyya_distance_matrixdf
-Rcpp::NumericMatrix bhattacharyya_distance_matrixdf(blaze::DynamicMatrix<float>& X);
-static SEXP _Rfgc_bhattacharyya_distance_matrixdf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix bhattacharyya_distance_matrixdf(blaze::DynamicMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_bhattacharyya_distance_matrixdf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::DynamicMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixdf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixdf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixdf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixdf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixdf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixdf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -1979,20 +2013,21 @@ RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixdf(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // bhattacharyya_distance_matrixsd
-Rcpp::NumericMatrix bhattacharyya_distance_matrixsd(blaze::CompressedMatrix<double>& X);
-static SEXP _Rfgc_bhattacharyya_distance_matrixsd_try(SEXP XSEXP) {
+Rcpp::NumericMatrix bhattacharyya_distance_matrixsd(blaze::CompressedMatrix<double>& X, double gamma_beta);
+static SEXP _Rfgc_bhattacharyya_distance_matrixsd_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<double>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixsd(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixsd(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixsd(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixsd(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixsd_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixsd_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -2013,20 +2048,21 @@ RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixsd(SEXP XSEXP) {
     return rcpp_result_gen;
 }
 // bhattacharyya_distance_matrixsf
-Rcpp::NumericMatrix bhattacharyya_distance_matrixsf(blaze::CompressedMatrix<float>& X);
-static SEXP _Rfgc_bhattacharyya_distance_matrixsf_try(SEXP XSEXP) {
+Rcpp::NumericMatrix bhattacharyya_distance_matrixsf(blaze::CompressedMatrix<float>& X, double gamma_beta);
+static SEXP _Rfgc_bhattacharyya_distance_matrixsf_try(SEXP XSEXP, SEXP gamma_betaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< blaze::CompressedMatrix<float>& >::type X(XSEXP);
-    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixsf(X));
+    Rcpp::traits::input_parameter< double >::type gamma_beta(gamma_betaSEXP);
+    rcpp_result_gen = Rcpp::wrap(bhattacharyya_distance_matrixsf(X, gamma_beta));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixsf(SEXP XSEXP) {
+RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixsf(SEXP XSEXP, SEXP gamma_betaSEXP) {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixsf_try(XSEXP));
+        rcpp_result_gen = PROTECT(_Rfgc_bhattacharyya_distance_matrixsf_try(XSEXP, gamma_betaSEXP));
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -2048,7 +2084,7 @@ RcppExport SEXP _Rfgc_bhattacharyya_distance_matrixsf(SEXP XSEXP) {
 }
 
 // validate (ensure exported C++ functions exist before calling them)
-static int _Rfgc_RcppExport_validate(const char* sig) {
+static int _Rfgc_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
         signatures.insert("void(*display_constants)()");
@@ -2062,26 +2098,26 @@ static int _Rfgc_RcppExport_validate(const char* sig) {
         signatures.insert("Rcpp::List(*kmeans_coresetdf)(const blaze::DynamicMatrix<float>&,int,size_t,uint64_t)");
         signatures.insert("Rcpp::List(*kmeans_coresetsd)(const blaze::CompressedMatrix<double>&,int,size_t,uint64_t)");
         signatures.insert("Rcpp::List(*kmeans_coresetsf)(const blaze::CompressedMatrix<float>&,int,size_t,uint64_t)");
-        signatures.insert("Rcpp::NumericMatrix(*dist_matrixdd)(blaze::DynamicMatrix<double>&,int)");
-        signatures.insert("Rcpp::NumericMatrix(*dist_matrixdf)(blaze::DynamicMatrix<float>&,int)");
-        signatures.insert("Rcpp::NumericMatrix(*dist_matrixsd)(blaze::CompressedMatrix<double>&,int)");
-        signatures.insert("Rcpp::NumericMatrix(*dist_matrixsf)(blaze::CompressedMatrix<float>&,int)");
-        signatures.insert("Rcpp::NumericMatrix(*llr_matrixdd)(blaze::DynamicMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*llr_matrixdf)(blaze::DynamicMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*llr_matrixsd)(blaze::CompressedMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*llr_matrixsf)(blaze::CompressedMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*uwllr_matrixdd)(blaze::DynamicMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*uwllr_matrixdf)(blaze::DynamicMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*uwllr_matrixsd)(blaze::CompressedMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*uwllr_matrixsf)(blaze::CompressedMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*jsd_matrixdd)(blaze::DynamicMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*jsd_matrixdf)(blaze::DynamicMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*jsd_matrixsd)(blaze::CompressedMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*jsd_matrixsf)(blaze::CompressedMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*jsm_matrixdd)(blaze::DynamicMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*jsm_matrixdf)(blaze::DynamicMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*jsm_matrixsd)(blaze::CompressedMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*jsm_matrixsf)(blaze::CompressedMatrix<float>&)");
+        signatures.insert("Rcpp::NumericMatrix(*dist_matrixdd)(blaze::DynamicMatrix<double>&,int,double)");
+        signatures.insert("Rcpp::NumericMatrix(*dist_matrixdf)(blaze::DynamicMatrix<float>&,int,double)");
+        signatures.insert("Rcpp::NumericMatrix(*dist_matrixsd)(blaze::CompressedMatrix<double>&,int,double)");
+        signatures.insert("Rcpp::NumericMatrix(*dist_matrixsf)(blaze::CompressedMatrix<float>&,int,double)");
+        signatures.insert("Rcpp::NumericMatrix(*llr_matrixdd)(blaze::DynamicMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*llr_matrixdf)(blaze::DynamicMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*llr_matrixsd)(blaze::CompressedMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*llr_matrixsf)(blaze::CompressedMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*uwllr_matrixdd)(blaze::DynamicMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*uwllr_matrixdf)(blaze::DynamicMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*uwllr_matrixsd)(blaze::CompressedMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*uwllr_matrixsf)(blaze::CompressedMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*jsd_matrixdd)(blaze::DynamicMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*jsd_matrixdf)(blaze::DynamicMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*jsd_matrixsd)(blaze::CompressedMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*jsd_matrixsf)(blaze::CompressedMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*jsm_matrixdd)(blaze::DynamicMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*jsm_matrixdf)(blaze::DynamicMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*jsm_matrixsd)(blaze::CompressedMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*jsm_matrixsf)(blaze::CompressedMatrix<float>&,double)");
         signatures.insert("Rcpp::NumericMatrix(*l2_matrixdd)(blaze::DynamicMatrix<double>&)");
         signatures.insert("Rcpp::NumericMatrix(*l2_matrixdf)(blaze::DynamicMatrix<float>&)");
         signatures.insert("Rcpp::NumericMatrix(*l2_matrixsd)(blaze::CompressedMatrix<double>&)");
@@ -2094,28 +2130,28 @@ static int _Rfgc_RcppExport_validate(const char* sig) {
         signatures.insert("Rcpp::NumericMatrix(*sqrl2_matrixdf)(blaze::DynamicMatrix<float>&)");
         signatures.insert("Rcpp::NumericMatrix(*sqrl2_matrixsd)(blaze::CompressedMatrix<double>&)");
         signatures.insert("Rcpp::NumericMatrix(*sqrl2_matrixsf)(blaze::CompressedMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*mkl_matrixdd)(blaze::DynamicMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*mkl_matrixdf)(blaze::DynamicMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*mkl_matrixsd)(blaze::CompressedMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*mkl_matrixsf)(blaze::CompressedMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*tvd_matrixdd)(blaze::DynamicMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*tvd_matrixdf)(blaze::DynamicMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*tvd_matrixsd)(blaze::CompressedMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*tvd_matrixsf)(blaze::CompressedMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixdd)(blaze::DynamicMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixdf)(blaze::DynamicMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixsd)(blaze::CompressedMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixsf)(blaze::CompressedMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixdd)(blaze::DynamicMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixdf)(blaze::DynamicMatrix<float>&)");
-        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixsd)(blaze::CompressedMatrix<double>&)");
-        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixsf)(blaze::CompressedMatrix<float>&)");
+        signatures.insert("Rcpp::NumericMatrix(*mkl_matrixdd)(blaze::DynamicMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*mkl_matrixdf)(blaze::DynamicMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*mkl_matrixsd)(blaze::CompressedMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*mkl_matrixsf)(blaze::CompressedMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*tvd_matrixdd)(blaze::DynamicMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*tvd_matrixdf)(blaze::DynamicMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*tvd_matrixsd)(blaze::CompressedMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*tvd_matrixsf)(blaze::CompressedMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixdd)(blaze::DynamicMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixdf)(blaze::DynamicMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixsd)(blaze::CompressedMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_metric_matrixsf)(blaze::CompressedMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixdd)(blaze::DynamicMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixdf)(blaze::DynamicMatrix<float>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixsd)(blaze::CompressedMatrix<double>&,double)");
+        signatures.insert("Rcpp::NumericMatrix(*bhattacharyya_distance_matrixsf)(blaze::CompressedMatrix<float>&,double)");
     }
     return signatures.find(sig) != signatures.end();
 }
 
 // registerCCallable (register entry points for exported C++ functions)
-RcppExport SEXP _Rfgc_RcppExport_registerCCallable() {
+RcppExport SEXP _Rfgc_RcppExport_registerCCallable() { 
     R_RegisterCCallable("Rfgc", "_Rfgc_display_constants", (DL_FUNC)_Rfgc_display_constants_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_display_sse_info", (DL_FUNC)_Rfgc_display_sse_info_try);
     R_RegisterCCallable("Rfgc", "_Rfgc_display_samplers", (DL_FUNC)_Rfgc_display_samplers_try);
@@ -2191,26 +2227,26 @@ static const R_CallMethodDef CallEntries[] = {
     {"_Rfgc_kmeans_coresetdf", (DL_FUNC) &_Rfgc_kmeans_coresetdf, 4},
     {"_Rfgc_kmeans_coresetsd", (DL_FUNC) &_Rfgc_kmeans_coresetsd, 4},
     {"_Rfgc_kmeans_coresetsf", (DL_FUNC) &_Rfgc_kmeans_coresetsf, 4},
-    {"_Rfgc_dist_matrixdd", (DL_FUNC) &_Rfgc_dist_matrixdd, 2},
-    {"_Rfgc_dist_matrixdf", (DL_FUNC) &_Rfgc_dist_matrixdf, 2},
-    {"_Rfgc_dist_matrixsd", (DL_FUNC) &_Rfgc_dist_matrixsd, 2},
-    {"_Rfgc_dist_matrixsf", (DL_FUNC) &_Rfgc_dist_matrixsf, 2},
-    {"_Rfgc_llr_matrixdd", (DL_FUNC) &_Rfgc_llr_matrixdd, 1},
-    {"_Rfgc_llr_matrixdf", (DL_FUNC) &_Rfgc_llr_matrixdf, 1},
-    {"_Rfgc_llr_matrixsd", (DL_FUNC) &_Rfgc_llr_matrixsd, 1},
-    {"_Rfgc_llr_matrixsf", (DL_FUNC) &_Rfgc_llr_matrixsf, 1},
-    {"_Rfgc_uwllr_matrixdd", (DL_FUNC) &_Rfgc_uwllr_matrixdd, 1},
-    {"_Rfgc_uwllr_matrixdf", (DL_FUNC) &_Rfgc_uwllr_matrixdf, 1},
-    {"_Rfgc_uwllr_matrixsd", (DL_FUNC) &_Rfgc_uwllr_matrixsd, 1},
-    {"_Rfgc_uwllr_matrixsf", (DL_FUNC) &_Rfgc_uwllr_matrixsf, 1},
-    {"_Rfgc_jsd_matrixdd", (DL_FUNC) &_Rfgc_jsd_matrixdd, 1},
-    {"_Rfgc_jsd_matrixdf", (DL_FUNC) &_Rfgc_jsd_matrixdf, 1},
-    {"_Rfgc_jsd_matrixsd", (DL_FUNC) &_Rfgc_jsd_matrixsd, 1},
-    {"_Rfgc_jsd_matrixsf", (DL_FUNC) &_Rfgc_jsd_matrixsf, 1},
-    {"_Rfgc_jsm_matrixdd", (DL_FUNC) &_Rfgc_jsm_matrixdd, 1},
-    {"_Rfgc_jsm_matrixdf", (DL_FUNC) &_Rfgc_jsm_matrixdf, 1},
-    {"_Rfgc_jsm_matrixsd", (DL_FUNC) &_Rfgc_jsm_matrixsd, 1},
-    {"_Rfgc_jsm_matrixsf", (DL_FUNC) &_Rfgc_jsm_matrixsf, 1},
+    {"_Rfgc_dist_matrixdd", (DL_FUNC) &_Rfgc_dist_matrixdd, 3},
+    {"_Rfgc_dist_matrixdf", (DL_FUNC) &_Rfgc_dist_matrixdf, 3},
+    {"_Rfgc_dist_matrixsd", (DL_FUNC) &_Rfgc_dist_matrixsd, 3},
+    {"_Rfgc_dist_matrixsf", (DL_FUNC) &_Rfgc_dist_matrixsf, 3},
+    {"_Rfgc_llr_matrixdd", (DL_FUNC) &_Rfgc_llr_matrixdd, 2},
+    {"_Rfgc_llr_matrixdf", (DL_FUNC) &_Rfgc_llr_matrixdf, 2},
+    {"_Rfgc_llr_matrixsd", (DL_FUNC) &_Rfgc_llr_matrixsd, 2},
+    {"_Rfgc_llr_matrixsf", (DL_FUNC) &_Rfgc_llr_matrixsf, 2},
+    {"_Rfgc_uwllr_matrixdd", (DL_FUNC) &_Rfgc_uwllr_matrixdd, 2},
+    {"_Rfgc_uwllr_matrixdf", (DL_FUNC) &_Rfgc_uwllr_matrixdf, 2},
+    {"_Rfgc_uwllr_matrixsd", (DL_FUNC) &_Rfgc_uwllr_matrixsd, 2},
+    {"_Rfgc_uwllr_matrixsf", (DL_FUNC) &_Rfgc_uwllr_matrixsf, 2},
+    {"_Rfgc_jsd_matrixdd", (DL_FUNC) &_Rfgc_jsd_matrixdd, 2},
+    {"_Rfgc_jsd_matrixdf", (DL_FUNC) &_Rfgc_jsd_matrixdf, 2},
+    {"_Rfgc_jsd_matrixsd", (DL_FUNC) &_Rfgc_jsd_matrixsd, 2},
+    {"_Rfgc_jsd_matrixsf", (DL_FUNC) &_Rfgc_jsd_matrixsf, 2},
+    {"_Rfgc_jsm_matrixdd", (DL_FUNC) &_Rfgc_jsm_matrixdd, 2},
+    {"_Rfgc_jsm_matrixdf", (DL_FUNC) &_Rfgc_jsm_matrixdf, 2},
+    {"_Rfgc_jsm_matrixsd", (DL_FUNC) &_Rfgc_jsm_matrixsd, 2},
+    {"_Rfgc_jsm_matrixsf", (DL_FUNC) &_Rfgc_jsm_matrixsf, 2},
     {"_Rfgc_l2_matrixdd", (DL_FUNC) &_Rfgc_l2_matrixdd, 1},
     {"_Rfgc_l2_matrixdf", (DL_FUNC) &_Rfgc_l2_matrixdf, 1},
     {"_Rfgc_l2_matrixsd", (DL_FUNC) &_Rfgc_l2_matrixsd, 1},
@@ -2223,22 +2259,22 @@ static const R_CallMethodDef CallEntries[] = {
     {"_Rfgc_sqrl2_matrixdf", (DL_FUNC) &_Rfgc_sqrl2_matrixdf, 1},
     {"_Rfgc_sqrl2_matrixsd", (DL_FUNC) &_Rfgc_sqrl2_matrixsd, 1},
     {"_Rfgc_sqrl2_matrixsf", (DL_FUNC) &_Rfgc_sqrl2_matrixsf, 1},
-    {"_Rfgc_mkl_matrixdd", (DL_FUNC) &_Rfgc_mkl_matrixdd, 1},
-    {"_Rfgc_mkl_matrixdf", (DL_FUNC) &_Rfgc_mkl_matrixdf, 1},
-    {"_Rfgc_mkl_matrixsd", (DL_FUNC) &_Rfgc_mkl_matrixsd, 1},
-    {"_Rfgc_mkl_matrixsf", (DL_FUNC) &_Rfgc_mkl_matrixsf, 1},
-    {"_Rfgc_tvd_matrixdd", (DL_FUNC) &_Rfgc_tvd_matrixdd, 1},
-    {"_Rfgc_tvd_matrixdf", (DL_FUNC) &_Rfgc_tvd_matrixdf, 1},
-    {"_Rfgc_tvd_matrixsd", (DL_FUNC) &_Rfgc_tvd_matrixsd, 1},
-    {"_Rfgc_tvd_matrixsf", (DL_FUNC) &_Rfgc_tvd_matrixsf, 1},
-    {"_Rfgc_bhattacharyya_metric_matrixdd", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixdd, 1},
-    {"_Rfgc_bhattacharyya_metric_matrixdf", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixdf, 1},
-    {"_Rfgc_bhattacharyya_metric_matrixsd", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixsd, 1},
-    {"_Rfgc_bhattacharyya_metric_matrixsf", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixsf, 1},
-    {"_Rfgc_bhattacharyya_distance_matrixdd", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixdd, 1},
-    {"_Rfgc_bhattacharyya_distance_matrixdf", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixdf, 1},
-    {"_Rfgc_bhattacharyya_distance_matrixsd", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixsd, 1},
-    {"_Rfgc_bhattacharyya_distance_matrixsf", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixsf, 1},
+    {"_Rfgc_mkl_matrixdd", (DL_FUNC) &_Rfgc_mkl_matrixdd, 2},
+    {"_Rfgc_mkl_matrixdf", (DL_FUNC) &_Rfgc_mkl_matrixdf, 2},
+    {"_Rfgc_mkl_matrixsd", (DL_FUNC) &_Rfgc_mkl_matrixsd, 2},
+    {"_Rfgc_mkl_matrixsf", (DL_FUNC) &_Rfgc_mkl_matrixsf, 2},
+    {"_Rfgc_tvd_matrixdd", (DL_FUNC) &_Rfgc_tvd_matrixdd, 2},
+    {"_Rfgc_tvd_matrixdf", (DL_FUNC) &_Rfgc_tvd_matrixdf, 2},
+    {"_Rfgc_tvd_matrixsd", (DL_FUNC) &_Rfgc_tvd_matrixsd, 2},
+    {"_Rfgc_tvd_matrixsf", (DL_FUNC) &_Rfgc_tvd_matrixsf, 2},
+    {"_Rfgc_bhattacharyya_metric_matrixdd", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixdd, 2},
+    {"_Rfgc_bhattacharyya_metric_matrixdf", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixdf, 2},
+    {"_Rfgc_bhattacharyya_metric_matrixsd", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixsd, 2},
+    {"_Rfgc_bhattacharyya_metric_matrixsf", (DL_FUNC) &_Rfgc_bhattacharyya_metric_matrixsf, 2},
+    {"_Rfgc_bhattacharyya_distance_matrixdd", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixdd, 2},
+    {"_Rfgc_bhattacharyya_distance_matrixdf", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixdf, 2},
+    {"_Rfgc_bhattacharyya_distance_matrixsd", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixsd, 2},
+    {"_Rfgc_bhattacharyya_distance_matrixsf", (DL_FUNC) &_Rfgc_bhattacharyya_distance_matrixsf, 2},
     {"_Rfgc_RcppExport_registerCCallable", (DL_FUNC) &_Rfgc_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };
