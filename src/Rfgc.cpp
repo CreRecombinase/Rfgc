@@ -1,5 +1,5 @@
 
-// [[Rcpp::interfaces(r, cpp)]]
+// [[Rcpp::interfaces(r)]]
 
 #define EXTERNAL_BOOST_IOSTREAMS 1
 #include <Rcpp.h>
