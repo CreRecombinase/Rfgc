@@ -8,16 +8,34 @@
 using namespace minocore;
 namespace dist = blz::distance;
 
-#ifdef __AVX512F__
-#pragma message("Using avx512")
-#elif __AVX2__
-#pragma message("Using avx2")
-#elif __AVX__
-#pragma message("Using avx")
-#elif __SSE4_1__
-#pragma message("sse4.1")
-#elif __SSE2__
-#pragma message("sse2")
+#ifndef __AVX512F__
+#define __AVX512F__ 0
+#endif
+#ifndef __AVX__
+#define __AVX__ 0
+#endif
+#ifndef __AVX2__
+#define __AVX2__ 0
+#endif
+#ifndef __SSE2__
+#define __SSE2__ 0
+#endif
+#ifndef __SSE4_1__
+#define __SSE4_1__ 0
+#endif
+
+#ifdef VERBOSE_AF
+#  ifdef __AVX512F__
+#      pragma message("Using avx512")
+#  elif __AVX2__
+#      pragma message("Using avx2")
+#  elif __AVX__
+#      pragma message("Using avx")
+#  elif __SSE4_1__
+#      pragma message("sse4.1")
+#  elif __SSE2__
+#      pragma message("sse2")
+#  endif
 #endif
 
 
@@ -48,21 +66,6 @@ void display_constants() {
     jsd::detail::print_measures();
 }
 
-#ifndef __AVX512F__
-#define __AVX512F__ 0
-#endif
-#ifndef __AVX__
-#define __AVX__ 0
-#endif
-#ifndef __AVX2__
-#define __AVX2__ 0
-#endif
-#ifndef __SSE2__
-#define __SSE2__ 0
-#endif
-#ifndef __SSE4_1__
-#define __SSE4_1__ 0
-#endif
 
 using dist::DissimilarityMeasure;
 
