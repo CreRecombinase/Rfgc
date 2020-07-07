@@ -6,7 +6,7 @@
 #include <minocore/minocore.h>
 #include <RcppBlaze3.h>
 using namespace minocore;
-namespace dist = blz::distance;
+namespace dist = minocore::distance;
 
 #ifndef __AVX512F__
 #define __AVX512F__ 0
@@ -50,12 +50,12 @@ namespace dist = blz::distance;
         pc.resize(1); pc[0] = gamma_beta; \
         pr = gamma_beta == 1. ? dist::DIRICHLET: dist::GAMMA_BETA;\
     }\
-    auto app = jsd::make_probdiv_applicator(X, msr, pr, priorptr); \
+    auto app = cmp::make_probdiv_applicator(X, msr, pr, priorptr); \
     auto ret = app.make_distance_matrix(msr, true); \
     return Rcpp::wrap(ret)
 
 #define RET_FOR_MEASURE_NO_PRIOR(msr) \
-    auto app = jsd::make_probdiv_applicator(X, msr); \
+    auto app = cmp::make_probdiv_applicator(X, msr); \
     auto ret = app.make_distance_matrix(msr, true); \
     return Rcpp::wrap(ret)
 
@@ -63,7 +63,7 @@ namespace dist = blz::distance;
 
 // [[Rcpp::export]]
 void display_constants() {
-    jsd::detail::print_measures();
+    cmp::print_measures();
 }
 
 
@@ -101,16 +101,16 @@ template<typename MT>
 Rcpp::List construct_coreset(MT &x, int k, size_t cs_size, int measure, uint64_t seed=0, int sampler=(int)coresets::LBK) {
     DissimilarityMeasure type = (DissimilarityMeasure)measure;
     switch(type) {
-        case jsd::TVD: case jsd::L1: std::fprintf(stderr, "Warning: D2 sampling is likely not sufficient for TVD and L1. Your coreset may have lower accuracy\n");
+        case cmp::TVD: case cmp::L1: std::fprintf(stderr, "Warning: D2 sampling is likely not sufficient for TVD and L1. Your coreset may have lower accuracy\n");
         default: ;
     }
-    auto app = jsd::make_probdiv_applicator(~x, type, jsd::NONE);
-    auto csampler = jsd::make_d2_coreset_sampler(app, k, seed, static_cast<blz::ElementType_t<MT> *>(nullptr), (coresets::SensitivityMethod)sampler);
+    auto app = cmp::make_probdiv_applicator(~x, type, cmp::NONE);
+    auto csampler = cmp::make_d2_coreset_sampler(app, k, seed, static_cast<blz::ElementType_t<MT> *>(nullptr), (coresets::SensitivityMethod)sampler);
     auto ics = csampler.sample(seed, cs_size);
     auto ret = coresets::index2matrix(ics, ~x);
     return Rcpp::List::create(Rcpp::Named("weights") = Rcpp::wrap(std::move(ret.weights_)),
                               Rcpp::Named("points") = Rcpp::wrap(std::move(ret.mat_)),
-                              Rcpp::Named("measure") = Rcpp::wrap(jsd::detail::prob2str(type)));
+                              Rcpp::Named("measure") = Rcpp::wrap(cmp::prob2str(type)));
 }
 
 // [[Rcpp::export]]
@@ -169,177 +169,177 @@ Rcpp::NumericMatrix dist_matrixsf(blaze::CompressedMatrix<float> &X, int arg, do
 
 // [[Rcpp::export]]
 Rcpp::NumericMatrix llr_matrixdd( blaze::DynamicMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::LLR);
+    RET_FOR_MEASURE(cmp::LLR);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix llr_matrixdf( blaze::DynamicMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::LLR);
+    RET_FOR_MEASURE(cmp::LLR);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix llr_matrixsd( blaze::CompressedMatrix<double> &X, double gamma_beta=-1) { // Assumes a prior
-    RET_FOR_MEASURE(jsd::LLR);
+    RET_FOR_MEASURE(cmp::LLR);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix llr_matrixsf( blaze::CompressedMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::LLR);
+    RET_FOR_MEASURE(cmp::LLR);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix uwllr_matrixdd( blaze::DynamicMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::UWLLR);
+    RET_FOR_MEASURE(cmp::UWLLR);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix uwllr_matrixdf( blaze::DynamicMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::UWLLR);
+    RET_FOR_MEASURE(cmp::UWLLR);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix uwllr_matrixsd( blaze::CompressedMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::UWLLR);
+    RET_FOR_MEASURE(cmp::UWLLR);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix uwllr_matrixsf( blaze::CompressedMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::UWLLR);
+    RET_FOR_MEASURE(cmp::UWLLR);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix jsd_matrixdd( blaze::DynamicMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::JSD);
+    RET_FOR_MEASURE(cmp::JSD);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix jsd_matrixdf( blaze::DynamicMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::JSD);
+    RET_FOR_MEASURE(cmp::JSD);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix jsd_matrixsd( blaze::CompressedMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::JSD);
+    RET_FOR_MEASURE(cmp::JSD);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix jsd_matrixsf( blaze::CompressedMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::JSD);
+    RET_FOR_MEASURE(cmp::JSD);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix jsm_matrixdd( blaze::DynamicMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::JSM);
+    RET_FOR_MEASURE(cmp::JSM);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix jsm_matrixdf( blaze::DynamicMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::JSM);
+    RET_FOR_MEASURE(cmp::JSM);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix jsm_matrixsd( blaze::CompressedMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::JSM);
+    RET_FOR_MEASURE(cmp::JSM);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix jsm_matrixsf( blaze::CompressedMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::JSM);
+    RET_FOR_MEASURE(cmp::JSM);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix l2_matrixdd( blaze::DynamicMatrix<double> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::L2);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::L2);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix l2_matrixdf( blaze::DynamicMatrix<float> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::L2);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::L2);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix l2_matrixsd( blaze::CompressedMatrix<double> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::L2);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::L2);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix l2_matrixsf( blaze::CompressedMatrix<float> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::L2);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::L2);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix l1_matrixdd( blaze::DynamicMatrix<double> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::L1);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::L1);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix l1_matrixdf( blaze::DynamicMatrix<float> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::L1);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::L1);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix l1_matrixsd( blaze::CompressedMatrix<double> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::L1);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::L1);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix l1_matrixsf( blaze::CompressedMatrix<float> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::L1);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::L1);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix sqrl2_matrixdd( blaze::DynamicMatrix<double> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::SQRL2);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::SQRL2);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix sqrl2_matrixdf( blaze::DynamicMatrix<float> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::SQRL2);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::SQRL2);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix sqrl2_matrixsd( blaze::CompressedMatrix<double> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::SQRL2);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::SQRL2);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix sqrl2_matrixsf( blaze::CompressedMatrix<float> &X) {
-    RET_FOR_MEASURE_NO_PRIOR(jsd::SQRL2);
+    RET_FOR_MEASURE_NO_PRIOR(cmp::SQRL2);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix mkl_matrixdd( blaze::DynamicMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::MKL);
+    RET_FOR_MEASURE(cmp::MKL);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix mkl_matrixdf( blaze::DynamicMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::MKL);
+    RET_FOR_MEASURE(cmp::MKL);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix mkl_matrixsd( blaze::CompressedMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::MKL);
+    RET_FOR_MEASURE(cmp::MKL);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix mkl_matrixsf( blaze::CompressedMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::MKL);
+    RET_FOR_MEASURE(cmp::MKL);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix tvd_matrixdd( blaze::DynamicMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::TOTAL_VARIATION_DISTANCE);
+    RET_FOR_MEASURE(cmp::TOTAL_VARIATION_DISTANCE);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix tvd_matrixdf( blaze::DynamicMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::TOTAL_VARIATION_DISTANCE);
+    RET_FOR_MEASURE(cmp::TOTAL_VARIATION_DISTANCE);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix tvd_matrixsd( blaze::CompressedMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::TOTAL_VARIATION_DISTANCE);
+    RET_FOR_MEASURE(cmp::TOTAL_VARIATION_DISTANCE);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix tvd_matrixsf( blaze::CompressedMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::TOTAL_VARIATION_DISTANCE);
+    RET_FOR_MEASURE(cmp::TOTAL_VARIATION_DISTANCE);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix bhattacharyya_metric_matrixdd( blaze::DynamicMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::BHATTACHARYYA_METRIC);
+    RET_FOR_MEASURE(cmp::BHATTACHARYYA_METRIC);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix bhattacharyya_metric_matrixdf( blaze::DynamicMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::BHATTACHARYYA_METRIC);
+    RET_FOR_MEASURE(cmp::BHATTACHARYYA_METRIC);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix bhattacharyya_metric_matrixsd( blaze::CompressedMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::BHATTACHARYYA_METRIC);
+    RET_FOR_MEASURE(cmp::BHATTACHARYYA_METRIC);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix bhattacharyya_metric_matrixsf( blaze::CompressedMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::BHATTACHARYYA_METRIC);
+    RET_FOR_MEASURE(cmp::BHATTACHARYYA_METRIC);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix bhattacharyya_distance_matrixdd( blaze::DynamicMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::BHATTACHARYYA_DISTANCE);
+    RET_FOR_MEASURE(cmp::BHATTACHARYYA_DISTANCE);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix bhattacharyya_distance_matrixdf( blaze::DynamicMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::BHATTACHARYYA_DISTANCE);
+    RET_FOR_MEASURE(cmp::BHATTACHARYYA_DISTANCE);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix bhattacharyya_distance_matrixsd( blaze::CompressedMatrix<double> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::BHATTACHARYYA_DISTANCE);
+    RET_FOR_MEASURE(cmp::BHATTACHARYYA_DISTANCE);
 }
 // [[Rcpp::export]]
 Rcpp::NumericMatrix bhattacharyya_distance_matrixsf( blaze::CompressedMatrix<float> &X, double gamma_beta=-1) {
-    RET_FOR_MEASURE(jsd::BHATTACHARYYA_DISTANCE);
+    RET_FOR_MEASURE(cmp::BHATTACHARYYA_DISTANCE);
 }
