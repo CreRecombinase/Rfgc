@@ -1,6 +1,6 @@
 
 ifdef SLEEF_DIR
-PKG_LIBS+=-L$(SLEEF_DIR)/lib -DBLAZE_SLEEF_MODE=1 -DBLAZE_BLAS_MODE=1
+PKG_LIBS+=-L$(SLEEF_DIR)/lib -DBLAZE_SLEEF_MODE=1
 endif
 
 CXX_STD=CXX17
@@ -9,5 +9,5 @@ PKG_CXXFLAGS+=\
     -Ifgc -Ifgc/include \
     -Ifgc/aesctr -Ifgc/blaze -Iinclude -I../inst/include -Ifgc/include/minocore \
     -Wno-unused-functions -march=native -O3 $(EXTRA)
-CXXFLAGS+= -Wno-unused-functions -DBLAZE_BLAS_MODE=1 -march=native
+CXXFLAGS+= -Wno-unused-functions -march=native -DBLAZE_BLAS_MODE=1 -DBLAZE_SLEEF_MODE=1
 PKG_LIBS+=$(LAPACK_LIBS) $(BLAS_LIBS) $(SHLIB_OPENMP_CXXFLAGS) $(LDFLAGS) $(EXTRA)
