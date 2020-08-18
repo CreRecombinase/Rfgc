@@ -59,8 +59,10 @@ namespace dist = minocore::distance;
     auto ret = app.make_distance_matrix(msr, true); \
     return Rcpp::wrap(ret)
 
-
-
+//' This is a example documentation
+//' It looks like this
+//' make sure you have the 'export' to make the function reachable from R (look at what happens at  R/RcppExports.R)
+//' @export
 // [[Rcpp::export]]
 void display_constants() {
     cmp::print_measures();
